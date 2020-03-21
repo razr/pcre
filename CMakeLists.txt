@@ -76,7 +76,7 @@ PROJECT(PCRE C CXX)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.0)
 CMAKE_POLICY(SET CMP0026 OLD)
 
-SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake) # for FindReadline.cmake
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake) # for FindReadline.cmake
 
 # external packages
 FIND_PACKAGE( BZip2 )
@@ -109,8 +109,8 @@ CHECK_FUNCTION_EXISTS(strtoll   HAVE_STRTOLL)
 CHECK_FUNCTION_EXISTS(strtoq    HAVE_STRTOQ)
 CHECK_FUNCTION_EXISTS(_strtoi64 HAVE__STRTOI64)
 
-#CHECK_TYPE_SIZE("long long"             LONG_LONG)
-#CHECK_TYPE_SIZE("unsigned long long"    UNSIGNED_LONG_LONG)
+CHECK_TYPE_SIZE("long long"             LONG_LONG)
+CHECK_TYPE_SIZE("unsigned long long"    UNSIGNED_LONG_LONG)
 
 # User-configurable options
 #
